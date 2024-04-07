@@ -72,3 +72,56 @@ const departments = {
 }
 
 console.log(departments);
+// 1a log aantal medewerkers in sales
+console.log("de afdeling Sales heef " + departments.sales.numberOfEmployees + " medewerkers");
+//1b log beschrijving afdeling marketing
+console.log("marketing is een leuke afdeling om te werken. " + departments.marketing.description);
+//1c log aantal medewerkers in customer service
+console.log("de afdeling customer service heeft " + departments["customer-service"].numberOfEmployees + " medewerkers.");
+//1d log bescrhijving functie verkoopmanager
+console.log("Sales is een uitdagende afdeling om te werken als Verkoopmanager. " + departments.sales.jobs[1].description);
+///////////////////////////////////////////
+///////opdracht 2 ///////////////////////////
+const userDepartmentChoice = prompt("Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]");
+console.log(userDepartmentChoice.toLowerCase());
+switch (userDepartmentChoice) {
+    case "marketing":
+        console.log("je koos voor: " + userDepartmentChoice[0]+ " "
+            + departments.marketing.description);
+        break;
+    case "sales":
+        console.log("je koos voor: " + userDepartmentChoice[1]+ " " + departments.sales.description);
+        break;
+    case "customer-service":
+        console.log("je koos voor: " + userDepartmentChoice[2]+ " " + departments["customer-service"].description);
+        break;
+    default:
+        console.error("dit is geen geldige optie");
+
+}
+///////////////////////////////////////
+const userChosenDepartment = prompt("Je koos " + userDepartmentChoice + ". Over welke functie wil je meer weten? Voer een getal tussen 0 en 4 in.\n" +
+    "voor: " + departments.marketing.jobs[0].title + " kies: 0\n" +
+    "voor: " + departments.marketing.jobs[1].title + " kies: 1\n" +
+    "voor: " + departments.marketing.jobs[2].title + " kies: 2\n" +
+    "voor: " + departments.marketing.jobs[3].title + " kies: 3\n" +
+    "voor: " + departments.marketing.jobs[4].title + " kies: 4");
+
+if (userChosenDepartment === "0") {
+    console.log("je koos " + departments.marketing.jobs[0].title + " Een uitdagende rol! \n"+ departments.marketing.jobs[0].description)
+} else if (userChosenDepartment === "1") {
+    console.log("je koos " + departments.marketing.jobs[1].title + " Een uitdagende rol! \n"+ departments.marketing.jobs[1].description)
+} else if (userChosenDepartment === "2") {
+    console.log("je koos " + departments.marketing.jobs[2].title + " Een uitdagende rol! \n"+ departments.marketing.jobs[2].description)
+} else if (userChosenDepartment === "3") {
+    console.log("je koos " + departments.marketing.jobs[3].title + " Een uitdagende rol! \n"+ departments.marketing.jobs[3].description)
+} else if (userChosenDepartment === "4") {
+    console.log("je koos " + departments.marketing.jobs[4].title + " Een uitdagende rol! \n" + departments.marketing.jobs[4].description)
+}   else {
+    console.error("ongeldige keuze")
+}
+
+
+// document.getElementById('role-title').textContent = departments.title; kwam vast te zitten
+
+// document.getElementById("department-description").textContent = "OKEEEEEEEEEEE";
